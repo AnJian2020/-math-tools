@@ -14,6 +14,11 @@ class ArithmeticOperations:
         except Exception as error:
             print(error.__str__())
 
+    
+    def complex_calculate(self, expression: str):
+        pass
+
+
     def is_valid_calculation_expression(self, expression: str):
         pattern = r"^[0-9().+\-*/]+$"
         match = re.match(pattern, expression)
