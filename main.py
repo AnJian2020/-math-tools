@@ -10,5 +10,5 @@ def print_hi(name):
 
 # 按装订区域中的绿色按钮以运行脚本。
 if __name__ == '__main__':
-    print(ArithmeticOperations().basic_calculate("(1.2+a2)*3"))
+    print(ArithmeticOperations().calculate("(1.2+2)*3"))
 
