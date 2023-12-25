@@ -74,3 +74,34 @@ def cuboid_area(length: float, width: float, height: float, reserve: int = 2) ->
     """
     area = (length * width + length * height + width * height) * 2
     return round(area, reserve)
+
+
+def ball_area(radius: float, reserve: int = 2) -> float:
+    """
+    计算球体的面积
+    :param radius: 球体的半径
+    :param reserve: 保留小数位数，默认为2
+    :return: 球体的面积
+    """
+    return round(4 * pi * radius**2, reserve)
+
+
+def polygon_area(point_list: list = None, reserve: int = 2) -> float:
+    """
+    计算多边形的面积(海伦公式)
+    :param point_list: 多边形各个顶点的坐标的列表
+    :param reserve: 保留小数位数，默认为2
+    :return: 多边形的面积
+    """
+    area = 0
+    if len(point_list) >= 3:
+        for i in range(len(point_list) - 2):
+            x1, y1 = point_list[i]
+            x2, y2 = point_list[i + 1]
+            x3, y3 = point_list[i + 3]
+            a = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+            b = ((x3 - x1) ** 2 + (y3 - y1) ** 2) ** 0.5
+            c = ((x3 - x2) ** 2 + (y3 - y2) ** 2) ** 0.5
+            s = (a + b + c) / 2.0
+            area += (s * (s - a) * (s - b) * (s - c)) ** 0.5
+    return round(area, reserve)
