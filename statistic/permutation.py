@@ -7,7 +7,7 @@ __author__ = "tom"
 def factorial(num: int) -> int:
     """
     计算阶乘
-    :param length: 参数
+    :param num: 参数
     :return: 计算结果
     """
     result = 1
