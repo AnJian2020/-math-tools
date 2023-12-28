@@ -98,7 +98,7 @@ def polygon_area(point_list: list = None, reserve: int = 2) -> float:
         for i in range(len(point_list) - 2):
             x1, y1 = point_list[i]
             x2, y2 = point_list[i + 1]
-            x3, y3 = point_list[i + 3]
+            x3, y3 = point_list[i + 2]
             a = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
             b = ((x3 - x1) ** 2 + (y3 - y1) ** 2) ** 0.5
             c = ((x3 - x2) ** 2 + (y3 - y2) ** 2) ** 0.5
