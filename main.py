@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from basic_math.arithmetic_operations import ArithmeticOperations
+from basic_math.arithmetic_operations import calculate
+
 
 def print_hi(name):
     # 在下面的代码行中使用断点来调试脚本。
@@ -10,5 +11,5 @@ def print_hi(name):
 
 # 按装订区域中的绿色按钮以运行脚本。
 if __name__ == '__main__':
-    print(ArithmeticOperations().calculate("(1.2+2)*3"))
+    print(calculate("(1.2+2)*3"))
 
