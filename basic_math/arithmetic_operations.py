@@ -13,10 +13,7 @@ def is_valid_calculation_expression(expression: str):
 
 
 def calculate(expression: str, reserve: int = 2) -> float:
-    try:
-        assert is_valid_calculation_expression(expression), Exception(
-            "Error: 表达式只能含有数字、小数点、括号和加减乘除符号。")
-        return round(eval(expression), reserve)
-    except Exception as error:
-        print(error.__str__())
-
+    assert is_valid_calculation_expression(expression), Exception(
+        "Error: 表达式只能含有数字、小数点、括号和加减乘除符号。"
+    )
+    return round(eval(expression), reserve)

@@ -21,8 +21,12 @@ class TestArithmeticOperations(unittest.TestCase):
             if v is not None:
                 self.assertEqual(calculate(k), round(v, 2))
             else:
-                self.assertIsNone(calculate(k))
+                with self.assertRaisesRegex(ZeroDivisionError, "division by zero"):
+                    calculate(k)
         expression1 = "1a+dfs"
-        # self.assertRaises(Exception, calculate, expression1)
-        self.assertIsNone(calculate(expression1))
+        with self.assertRaisesRegex(AssertionError, "Error: 表达式只能含有数字、小数点、括号和加减乘除符号。"):
+            calculate(expression=expression1)
         self.assertEqual(calculate('2.75346+3.1415934', 4), 5.8951)
+
+if __name__=="__main__":
+    unittest.main()

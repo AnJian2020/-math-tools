@@ -17,8 +17,10 @@ def fraction_to_decimal(expression: str = None, numerator=None, denominator=None
     """
     将分数转化为小数
     """
-    if expression and (numerator is None and denominator is None):
+    if expression:
         assert '/' in expression, Exception("Error: 分数格式错误！")
         numerator, denominator = tuple(map(int, expression.split("/")))
+    elif numerator is None or denominator is None:
+        raise Exception("分子和分母不能为空！")
     fraction = Fraction(numerator, denominator)
     return round(float(fraction), reserve)
